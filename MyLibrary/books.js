@@ -28,6 +28,12 @@ function displayLibrary(libraryArray) {
     }
 }
 
-formButton.addEventListener("click", (e) => {
+const titleInput = document.querySelector("#book_title");
+const authorInput = document.querySelector("book_author");
+const pagesInput = document.querySelector("book_pages");
 
+formButton.addEventListener("click", (e) => {
+    addBookToLibrary(titleInput, authorInput, pagesInput);
+
+    displayLibrary(myLibrary);
 })
