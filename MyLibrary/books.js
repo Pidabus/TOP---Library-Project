@@ -27,3 +27,7 @@ function displayLibrary(libraryArray) {
         container.appendChild(booksContainer);
     }
 }
+
+formButton.addEventListener("click", (e) => {
+
+})
