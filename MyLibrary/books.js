@@ -1,6 +1,5 @@
 const container = document.querySelector(".container");
-const formButton = document.querySelector(".form-button");
-const form = document.querySelector("form");
+const formButton = document.querySelector("#submissionButton");
 
 const myLibrary = [];
 
