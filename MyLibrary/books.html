@@ -10,8 +10,14 @@
 </head>
 
 <body>
-    <button class="form-button">New Book</button>
-    <form action="#" method="post"></form>
+    <button command="show-modal" commandfor="my-form">New Book</button>
+    <dialog id="my-form">
+        <form>
+            
+        </form>
+        <button commandfor="my-form" command="close">Close</button>
+    </dialog>
+
     <div class="container"></div>
 </body>
 
