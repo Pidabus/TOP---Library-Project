@@ -2,14 +2,15 @@ const container = document.querySelector(".container");
 
 const myLibrary = [];
 
-function Book(title, author) {
+function Book(title, author, pages) {
     this.title = title;
     this.author = author;
+    this.pages = pages;
     this.id = crypto.randomUUID();
 }
 
-function addBookToLibrary(title, author) {
-    let newBook = new Book(title, author);
+function addBookToLibrary(title, author, pages) {
+    let newBook = new Book(title, author, pages);
     myLibrary.push(newBook);
 }
 
@@ -19,14 +20,15 @@ function displayLibrary(libraryArray) {
         booksContainer.classList.add("bookCard");
 
         booksContainer.innerText += `Title: ${libraryArray[book].title}
-                           Author: ${libraryArray[book].author}\n\n`;
+                           Author: ${libraryArray[book].author}
+                           Pages: ${libraryArray[book].pages}\n\n`;
 
         container.appendChild(booksContainer);
     }
 }
 
-addBookToLibrary("The Hobbit", "J.R.R Tolkien");
-addBookToLibrary("The Return of The King", "J.R.R Tolkien");
-addBookToLibrary("The Five Armies", "J.R.R Tolkien");
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", 900);
+addBookToLibrary("The Return of The King", "J.R.R Tolkien", 342);
+addBookToLibrary("The Five Armies", "J.R.R Tolkien", 452);
 
 displayLibrary(myLibrary);
