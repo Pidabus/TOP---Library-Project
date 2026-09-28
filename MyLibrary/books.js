@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const formButton = document.querySelector(".form-button");
+const form = document.querySelector("form");
 
 const myLibrary = [];
 
@@ -27,3 +28,7 @@ function displayLibrary(libraryArray) {
         container.appendChild(booksContainer);
     }
 }
+
+formButton.addEventListener("click", (e) => {
+
+});
