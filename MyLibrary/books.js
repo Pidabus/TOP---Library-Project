@@ -1,7 +1,7 @@
 const container = document.querySelector(".container");
 const formButton = document.querySelector("#submissionButton");
 
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, pages) {
     this.title = title;
@@ -23,13 +23,21 @@ function displayLibrary(libraryArray) {
 
         const deleteButton = document.createElement("button");
         deleteButton.innerText = "Delete";
+        deleteButton.dataset.id = libraryArray[book].id;
 
         booksContainer.innerText = `Title: ${libraryArray[book].title}
                            Author: ${libraryArray[book].author}
                            Pages: ${libraryArray[book].pages}\n\n`;
 
-        booksContainer.appendChild(deleteButton);
+        deleteButton.addEventListener("click", (e) =>{
+            const itemId = e.target.dataset.id;
 
+            myLibrary = myLibrary.filter(item => item.id !== itemId);
+
+            displayLibrary(myLibrary);
+        });
+
+        booksContainer.appendChild(deleteButton);
         container.appendChild(booksContainer);
     }
 }
