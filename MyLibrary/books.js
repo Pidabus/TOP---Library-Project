@@ -10,7 +10,6 @@ function addBookToLibrary(title, author) {
     myLibrary.push(bookName);
 }
 
-addBookToLibrary("The Hobbit", "J.R.R Tolkien");
-addBookToLibrary("LOTR 1", "J.R.R Tolkien");
-addBookToLibrary("Smaug", "J.R.R Tolkien");
-console.log(myLibrary);
+const container = document.querySelector(".container");
+const books = document.createElement("p");
+
