@@ -1,12 +1,10 @@
 const container = document.querySelector(".container");
-const booksContainer = document.createElement("p");
-booksContainer.classList.add("bookCard");
 
 const myLibrary = [];
 
 function Book(title, author) {
     this.title = title;
-    this.author = author;   
+    this.author = author;
     this.id = crypto.randomUUID();
 }
 
@@ -17,12 +15,14 @@ function addBookToLibrary(title, author) {
 
 function displayLibrary(libraryArray) {
     for (let book in libraryArray) {
+        const booksContainer = document.createElement("p"); // This is placed inside the loop so each book created receives it's own container.
+        booksContainer.classList.add("bookCard");
+
         booksContainer.innerText += `Title: ${libraryArray[book].title}
                            Author: ${libraryArray[book].author}\n\n`;
 
         container.appendChild(booksContainer);
     }
-    console.log(myLibrary);
 }
 
 addBookToLibrary("The Hobbit", "J.R.R Tolkien");
