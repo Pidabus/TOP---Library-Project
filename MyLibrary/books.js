@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const formButton = document.querySelector(".form-button");
 
 const myLibrary = [];
 
@@ -26,9 +27,3 @@ function displayLibrary(libraryArray) {
         container.appendChild(booksContainer);
     }
 }
-
-addBookToLibrary("The Hobbit", "J.R.R Tolkien", 900);
-addBookToLibrary("The Return of The King", "J.R.R Tolkien", 342);
-addBookToLibrary("The Five Armies", "J.R.R Tolkien", 452);
-
-displayLibrary(myLibrary);
