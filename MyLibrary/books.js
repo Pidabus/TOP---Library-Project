@@ -29,11 +29,11 @@ function displayLibrary(libraryArray) {
 }
 
 const titleInput = document.querySelector("#book_title");
-const authorInput = document.querySelector("book_author");
-const pagesInput = document.querySelector("book_pages");
+const authorInput = document.querySelector("#book_author");
+const pagesInput = document.querySelector("#book_pages");
 
 formButton.addEventListener("click", (e) => {
-    addBookToLibrary(titleInput, authorInput, pagesInput);
+    addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value);
 
     displayLibrary(myLibrary);
 })
