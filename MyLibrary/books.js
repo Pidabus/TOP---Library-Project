@@ -16,11 +16,12 @@ function addBookToLibrary(title, author, pages) {
 }
 
 function displayLibrary(libraryArray) {
+    container.innerText = "";
     for (let book in libraryArray) {
         const booksContainer = document.createElement("p"); // This is placed inside the loop so each book created receives it's own container.
         booksContainer.classList.add("bookCard");
 
-        booksContainer.innerText += `Title: ${libraryArray[book].title}
+        booksContainer.innerText = `Title: ${libraryArray[book].title}
                            Author: ${libraryArray[book].author}
                            Pages: ${libraryArray[book].pages}\n\n`;
 
@@ -36,4 +37,8 @@ formButton.addEventListener("click", (e) => {
     addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value);
 
     displayLibrary(myLibrary);
+
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
 })
