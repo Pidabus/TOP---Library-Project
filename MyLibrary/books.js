@@ -19,11 +19,16 @@ function displayLibrary(libraryArray) {
     container.innerText = "";
     for (let book in libraryArray) {
         const booksContainer = document.createElement("p"); // This is placed inside the loop so each book created receives it's own container.
-        booksContainer.classList.add("bookCard");
+        booksContainer.classList.add("bookCard"); // ==> This links the html to it's css
+
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
 
         booksContainer.innerText = `Title: ${libraryArray[book].title}
                            Author: ${libraryArray[book].author}
                            Pages: ${libraryArray[book].pages}\n\n`;
+
+        booksContainer.appendChild(deleteButton);
 
         container.appendChild(booksContainer);
     }
