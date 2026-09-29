@@ -8,7 +8,7 @@ let newArr = [];
 
 for (let i = 0; i < arr.length; i++) {
     let tempArr = [];
-    tempArr = arr[i].filter(item => item > 11);
+    tempArr = arr[i].filter(item => item > 11); // By using arr[i] here, we are able to get a regular array to filter() for each iteration of the loop.
 
     if (!tempArr.length) continue;
 
