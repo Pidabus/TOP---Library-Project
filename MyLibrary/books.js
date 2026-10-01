@@ -3,11 +3,13 @@ const formButton = document.querySelector("#submissionButton");
 
 let myLibrary = [];
 
-function Book(title, author, pages) {
+class Book {
+    constructor(title, author, pages) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.id = crypto.randomUUID();
+    }
 }
 
 function addBookToLibrary(title, author, pages) {
